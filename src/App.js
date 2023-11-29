@@ -1,6 +1,7 @@
 // import './App.css';
 import MyHeader from './MyHeader';
 // import MyFooter from './MyFooter';
+import Counter from './Counter';
 
 function App() {
   let name = '오승현';
@@ -32,6 +33,7 @@ function App() {
         </h1>
         <b style={style.bold_txt} id='bold_txt'>
           {number}는 : {number % 2 === 0 ? '짝수' : '홀수'}
+          <Counter />
         </b>
       </header>
     </div>
