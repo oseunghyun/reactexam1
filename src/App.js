@@ -2,6 +2,7 @@
 import MyHeader from './MyHeader';
 // import MyFooter from './MyFooter';
 import Counter from './Counter';
+import Container from './Container';
 
 function App() {
   let name = '오승현';
@@ -24,19 +25,31 @@ function App() {
 
   const number = 5;
 
+  const counterProps = {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4,
+    e: 5,
+    initialValue: 5,
+  };
+
   return (
-    <div style={style.App}>
-      <MyHeader />
-      <header className='App-header'>
-        <h1 style={style.h1}>
-          안녕 리액트 {name} {func()}
-        </h1>
-        <b style={style.bold_txt} id='bold_txt'>
-          {number}는 : {number % 2 === 0 ? '짝수' : '홀수'}
-          <Counter />
-        </b>
-      </header>
-    </div>
+    <Container>
+      <div style={style.App}>
+        <MyHeader />
+        <header className='App-header'>
+          <h1 style={style.h1}>
+            안녕 리액트 {name} {func()}
+          </h1>
+          <b style={style.bold_txt} id='bold_txt'>
+            {number}는 : {number % 2 === 0 ? '짝수' : '홀수'}
+            {/* <Counter a={1} initialValue={5} /> */}
+            <Counter {...counterProps} />
+          </b>
+        </header>
+      </div>
+    </Container>
   );
 }
 
